@@ -3,6 +3,12 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
 
 const path = require('path')
+var ipPath = 'http://test.houduniot.com:8180'; //测试
+// const ipPath = 'http://api.dev.houduniot.com:82/'//  开发
+// const ipPath = 'http://192.168.11.146:9999'; 
+// const ipPath = "http://192.168.31.81:9999"; //测试
+// const ipPath = "https://wx.houduniot.com/" //生产
+// const ipPath = 'http://183.220.115.100:10080';//开发外网
 
 module.exports = {
   dev: {
@@ -10,7 +16,71 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      '/auth':{
+        target:ipPath,
+        changeOrigin:true,
+        pathRewrite:{
+          '^/auth': '/auth'
+        }
+      },
+      '/api': {
+        target: ipPath,
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api': '/api'
+        }
+      },
+      '/common': {
+        target: ipPath,
+        changeOrigin: true,
+        pathRewrite: {
+          '^/common': '/common'
+        }
+      },
+      '/admin': {
+        target: ipPath,
+        changeOrigin: true,
+        pathRewrite: {
+          '^/admin': '/admin'
+        }
+      },
+      '/fanancial': {
+        target: ipPath,
+        changeOrigin: true,
+        pathRewrite: {
+          '^/fanancial': '/fanancial'
+        }
+      },
+      '/xg': {
+        target: ipPath,
+        changeOrigin: true,
+        pathRewrite: {
+          '^/xg': '/xg'
+        }
+      },
+      '/cms': {
+        target: ipPath,
+        changeOrigin: true,
+        pathRewrite: {
+          '^/cms': '/cms'
+        }
+      },
+      '/mc': {
+        target: ipPath,
+        changeOrigin: true,
+        pathRewrite: {
+          '^/mc': '/mc'
+        }
+      },
+      '/check': {
+        target: ipPath,
+        changeOrigin: true,
+        pathRewrite: {
+          '^/check': '/check'
+        }}
+
+    },
 
     // Various Dev Server settings
     // 改为0.0.0.0 方便其他访问
