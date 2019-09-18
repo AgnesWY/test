@@ -1,12 +1,77 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>test</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name='apple-mobile-web-app-capable' content='yes' >
+  <meta name='full-screen' content='true' >
+  <meta name='x5-fullscreen' content='true' >
+  <meta name='360-fullscreen' content='true' >
+  <!-- <link rel="shortcut icon" href="./favicon.ico"> -->
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1066214_o4xegnkdl7d.css">
+  <title>后盾消防</title>
+  <!-- <script src="./static/js/jweixin-1.2.0.js"></script> -->
+  <!-- <script src="./static/dll/vendor.dll.js"></script> -->
+  <script>
+    if(navigator.onLine){
+      window.addEventListener('error', handleListenerError, true);
+    }
+    function handleListenerError (eventErr){
+      if (eventErr.srcElement.localName == 'script' && 
+      (eventErr.srcElement.src.indexOf('wx.houduniot.com/static/js/') ||
+      eventErr.srcElement.src.indexOf('m.houduniot.com/static/js/'))) {
+            let arr = eventErr.srcElement.src.split('/static/js/');
+            let fileName = arr[1];
+            let hash = fileName.split('.')[1]; //获取hash
+            if(fileName.indexOf('.js.map')<0){
+              let reloadObj = {
+                hash: hash,
+                time: new Date().getTime()
+              }
+              let reloadObjlocalStorage = window.localStorage.getItem('reloadObj');
+              if(reloadObjlocalStorage == null){
+                window.localStorage.setItem('reloadObj',JSON.stringify(reloadObj))
+                window.location.reload();
+              }else{
+                let preReloadObj = JSON.parse(reloadObjlocalStorage);
+                let time = new Date().getTime();
+                if(time > Number(preReloadObj.time) + 60){
+                  window.localStorage.setItem('reloadObj',JSON.stringify(reloadObj))
+                  window.location.reload();
+                }
+              }
+            }
+      }
+      eventErr.preventDefault()
+    }
+  </script>
+  <style>
+  @font-face {
+    font-family: 'PuHuiTi-Regular';
+    src: url("/static/js/Alibaba-PuHuiTi-Regular.ttf") format("ttf");
+    /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+    font-weight: normal;
+    font-style: normal;
+  }
+  *{
+    font-family: 'PuHuiTi-Regular';
+  }
+  </style>
+</head>
+
+<body>
+  <div id="app"></div>
+</body>
+<script>
+  if (window.plus) {
+    plus.navigator.setStatusBarBackground('#fff'); //设置状态栏的颜色			
+    plus.navigator.setStatusBarStyle('dark');
+  }
+
+</script>
+
 </html>

@@ -3,8 +3,11 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import Cube from 'cube-ui'
 
 Vue.config.productionTip = false
+//注册 
+Vue.use(Cube)
 
 /* eslint-disable no-new */
 new Vue({
