@@ -4,7 +4,7 @@ import Vue from 'vue'
 import App from '@/App'
 import router from '@/router'
 import store from '@/store';
-
+import '@/assets/css/reset.css'
 import Cube from 'cube-ui'
 // H5
 import 'amfe-flexible'

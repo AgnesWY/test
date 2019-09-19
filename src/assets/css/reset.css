@@ -1,0 +1,127 @@
+input::-webkit-input-placeholder {
+  /* placeholder颜色  */
+  color: #CCCCCC;
+}
+.cube-dialog-btn_highlight{
+  background-color: #09ccd5 !important;
+}
+
+input {
+  outline: none;
+  caret-color:#00CAD3;
+}
+header{
+  box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.08);
+  z-index: 50;
+}
+
+header>h1{
+  box-sizing: border-box;
+  padding: 0 65px;
+  white-space:nowrap; 
+  text-overflow:ellipsis;
+  overflow:hidden;
+}
+.main-list>h3>span{
+  display: inline-block;
+  width: 75%;
+  box-sizing: border-box;
+  white-space:nowrap; 
+  text-overflow:ellipsis;
+  overflow:hidden;
+}
+
+.icon-fanhui {
+  font-size: 20px;
+}
+
+.cube-page {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #F0F0F0;
+}
+
+.cube-page .wrapper {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.cube-toast-icon {
+  line-height: 100%;
+}
+
+.loginf .cube-checkbox-wrap {
+  font-size: 16px;
+}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: ' ';
+  clear: both;
+  height: 0;
+}
+
+.bounce-enter-active {
+  animation: bounce-in .3s;
+}
+
+.bounce-leave-active {
+  animation: bounce-in .3s reverse;
+}
+
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+.xs-plugin-pulldown-container {
+  font-size: 14px;
+  top: -60px !important;
+  color: #999;
+}
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes mymove {
+  from {
+    transform: translate(0, 0);
+  }
+
+  to {
+    transform: translate(-100%, 0);
+  }
+}
+
+@-webkit-keyframes mymove {
+  from {
+    transform: translate(0, 0);
+  }
+
+  to {
+    transform: translate(-100%, 0);
+  }
+}
+
+.weui-loadmore__tips{
+  color: #CCCCCC;
+}
+
