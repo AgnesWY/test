@@ -1,5 +1,9 @@
 <template>
-  <cube-button @click="showDialog">show dialog</cube-button>
+<section class="hello-pc">
+   <cube-button @click="showDialog">show dialog</cube-button>
+
+</section>
+ 
 </template>
 
 <script>
