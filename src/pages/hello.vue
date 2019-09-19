@@ -1,7 +1,7 @@
 <template>
 <section class="hello">
     <myHeader></myHeader>
-    <myHeader2></myHeader2>
+    <!-- <myHeader2></myHeader2> -->
     <hello></hello>
 
 </section>
