@@ -7,8 +7,8 @@ import layout from '@/layout/layout'
 /* 各部分路由组件  chunkname*/
 // const nopage = () => import(/* webpackChunkName: "nopage"*/ '@/pages/nopage')
 // const helloWorld = () => import(/* webpackChunkName: "HelloWorld"*/ '@/components/HelloWorld')
-const nopage = () => import( '@/pages/nopage')
-const hello = () => import( '@/pages/hello')
+const nopage = () => import(/* webpackChunkName: "nopage"*/  '@/pages/nopage')
+const hello = () => import( /* webpackChunkName: "hello"*/ '@/pages/hello')
 Vue.use(Router)
 
 export default new Router({
